@@ -12,6 +12,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background-color: rgb(13, 17, 23);
+  }
 
   a {
     color: inherit;
@@ -20,17 +27,6 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
-    body {
-      color: white;
-      /* background: hsl(216, 28%, 7%); */
-      background-color: rgb(13, 17, 23);
-    }
   }
 `
 

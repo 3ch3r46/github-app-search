@@ -72,7 +72,7 @@ const Flex = styled.div<FlexProps>`
 `
 
 const Main = styled.div`
-    min-height: calc(100vh - 170px);
+    min-height: calc(100vh - 180px);
 `
 
 const Readme = styled.article`
