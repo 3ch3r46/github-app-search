@@ -23,7 +23,7 @@ const UserPage: NextPage = () => {
         if (user.isError || repositories.isError) {
             router.push('/notfound');
         }
-    }, [user, repositories])
+    }, [user, repositories, router])
     
     return (
         <>

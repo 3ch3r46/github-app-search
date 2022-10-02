@@ -32,7 +32,7 @@ const Home: NextPage = () => {
     if (data) {
       setResults(data.items);
     }
-  }, [data]);
+  }, [data, setResults]);
 
   return (
     <>

@@ -45,7 +45,7 @@ const RepoPage: NextPage = () => {
         if (user.isError || repository.isError) {
             router.push('/notfound');
         }
-    }, [user, repository])
+    }, [user, repository, router])
     
     return (
         <>
@@ -110,10 +110,9 @@ const RepoPage: NextPage = () => {
                                 </Skeleton>}
                             { readme.isError && <h3>Readme Not Found!</h3>}
                         { readme.data && readme.data.content && <ReactMarkdown 
-                            children={Buffer.from(readme.data.content, 'base64').toString().replaceAll("img src=\"/", `img src="https://raw.githubusercontent.com/${path}/${repository.data?.default_branch??'master'}/`)} 
                             remarkPlugins={[remarkParse,remarkGfm, remarkToc, [remarkGithub, {repository: path}]]}
                             rehypePlugins={[rehypeHighlight, rehypeRaw, rehypeSlug, rehypeAutolinkHeadings]}
-                            />
+                            >{Buffer.from(readme.data.content, 'base64').toString().replaceAll("img src=\"/", `img src="https://raw.githubusercontent.com/${path}/${repository.data?.default_branch??'master'}/`)}</ReactMarkdown>
                         }
                         </Readme>
                     </Column>
