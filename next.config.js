@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  compiler: {
+    styledComponents: true
+  },
+  images: {
+    domains: ["avatars.githubusercontent.com", "raw.githubusercontent.com"]
+  }
 }
 
 module.exports = nextConfig
